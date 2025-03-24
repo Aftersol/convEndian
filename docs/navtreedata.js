@@ -25,12 +25,7 @@
 var NAVTREE =
 [
   [ "Endianness Conversion Library", "index.html", [
-    [ "Endian Conversion Library", "md__r_e_a_d_m_e.html", [
-      [ "Examples", "md__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Reading big endian data", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-        [ "Writing big endian data", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
-      ] ]
-    ] ],
+    [ "Endian Conversion Library", "index.html", "index" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [

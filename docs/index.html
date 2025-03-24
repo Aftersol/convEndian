@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Endianness Conversion Library: Main Page</title>
+<title>Endianness Conversion Library: Endian Conversion Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,10 +102,50 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Endianness Conversion Library Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Endian Conversion Library </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>A library for converting between endianness that doesn't depend on external libraries.</p>
+<p>Place <code>conv_endian.c</code> and <code><a class="el" href="conv__endian_8h.html" title="A C portable header that contains declarations of functions for converting between endianness.">conv_endian.h</a></code> into your source files</p>
+<p>The library can be optionally be built by calling make or using CMake</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Examples</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Reading big endian data</h2>
+<div class="fragment"><div class="line"><span class="comment">//...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// receive data</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> yourBuffer[512];</div>
+<div class="line"><span class="keywordtype">int</span>* ptr_to_buffer = (<span class="keywordtype">int</span>*)yourBuffer;</div>
+<div class="line"><span class="keywordtype">int</span> value;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// read big endian</span></div>
+<div class="line">fread(yourBuffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), 1, yourfile);</div>
+<div class="line"> </div>
+<div class="line">value = *ptr_to_buffer;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// to be converted and store in whatever endian your machine runs on</span></div>
+<div class="line">value = read_be_u32(value);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//...</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Writing big endian data</h2>
+<div class="fragment"><div class="line"><span class="comment">//...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// write or send data</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// to be converted into big endian value</span></div>
+<div class="line"><span class="keywordtype">int</span> value = 1234567890;</div>
+<div class="line">value = convert_to_be_u32(value);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// write big endian integer</span></div>
+<div class="line">fwrite(&amp;value, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), 1, yourfile);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//...</span></div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
