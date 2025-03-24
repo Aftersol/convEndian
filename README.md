@@ -6,6 +6,12 @@ Place ```conv_endian.c``` and ```conv_endian.h``` into your source files
 
 The library can be optionally be built by calling make or using CMake
 
+## Downloads
+
+[You can download the source code for the library here: https://github.com/Aftersol/convEndian/releases](https://github.com/Aftersol/convEndian/releases)
+
+---
+
 ## Examples
 
 ### Reading big endian data
